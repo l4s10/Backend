@@ -12,7 +12,7 @@ app.listen(process.env.PORT, () =>{
 })
 
 mongoose.set('useFindAndModify',false);
-mongoose.set('useNewUrlsParser',true);
+mongoose.set('useNewUrlParser',true);
 mongoose.set('useCreateIndex',true);
 mongoose.set('useUnifiedTopology',true);
 
