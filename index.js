@@ -4,6 +4,12 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
+const mantentionRoutes = require('./routes/mantentionRoutes');
+
+app.use(cors());
+app.use(express.json());
+app.options('*',cors());
+app.use('/api',mantentionRoutes);
 
 //Seteamos el puerto
 app.listen(process.env.PORT, () =>{
