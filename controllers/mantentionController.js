@@ -16,6 +16,22 @@ const createMantention = (req, res) =>{
     });
 }
 
+/*Funcionalidad Jorge*/
+const deleteMantention = (req, res) =>{
+    const {id} = req.body;
+    mantention.findByIdAndDelete(id, (err, mantention) =>{
+        if(err){
+            return res.status(400).send({message: "Error al eliminar la mantencion"})
+        }
+        if(!mantention){
+            return res.status(404).send({message: "Error al eliminar la mantencion solicitada"})
+        }
+        return res.status(200).send(mantention)
+    });
+}
+
+
 module.exports = {
-    createMantention
+    createMantention,
+    deleteMantention
 }
