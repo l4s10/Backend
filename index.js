@@ -5,17 +5,18 @@ require('dotenv').config();
 
 const app = express();
 
-// app.listen(3000, () => console.log('server started'));
-
+//Seteamos el puerto
 app.listen(process.env.PORT, () =>{
     console.log('server corriendo en el puerto -> ', process.env.PORT);
 })
 
+//Configuraciones generales
 mongoose.set('useFindAndModify',false);
 mongoose.set('useNewUrlParser',true);
 mongoose.set('useCreateIndex',true);
 mongoose.set('useUnifiedTopology',true);
 
+//Conectando a la base de datos
 mongoose.connect(process.env.DB,(err) => {
     if(err){
         return console.log('Error al conectar con la base de datos');
