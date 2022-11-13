@@ -13,7 +13,7 @@ app.use('/api',mantentionRoutes);
 
 //Seteamos el puerto
 app.listen(process.env.PORT, () =>{
-    console.log('server corriendo en el puerto -> ', process.env.PORT);
+    console.log('Servidor corriendo en el puerto -> ', process.env.PORT);
 })
 
 //Configuraciones generales
@@ -25,7 +25,7 @@ mongoose.set('useUnifiedTopology',true);
 //Conectando a la base de datos
 mongoose.connect(process.env.DB,(err) => {
     if(err){
-        return console.log('Error al conectar con la base de datos');
+        return console.log('--> [Error al conectar con la base de datos] :C <--');
     }
-    return console.log('Conectado a la base de datos')
+    return console.log('[Conectado a la base de datos] :D')
 })
