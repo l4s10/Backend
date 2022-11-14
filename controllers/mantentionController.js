@@ -12,7 +12,7 @@ const createMantention = (req, res) =>{
         if(err){
             return res.status(400).send({message: 'Error al crear la mantención'})
         }
-        return res.status(200).send(mantention)
+        return res.status(201).send(mantention)
     });
 }
 
@@ -30,8 +30,17 @@ const deleteMantention = (req, res) =>{
     });
 }
 
+/* Funcionalidad Valter */
+const getMantention = (req, res) => {
+    mantention.find({}, (err, mantentions) => {
+    if (err) {
+        return res.status(400).send({ message: "Error al obtener los productos" })
+    }
+    return res.status(200).send(mantentions)
+})}
 
 module.exports = {
     createMantention,
-    deleteMantention
+    deleteMantention,
+    getMantention
 }
