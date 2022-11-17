@@ -8,12 +8,16 @@ const mantentionSchema = new Schema({
         required: true
     },
     cost:{
-        type: String,
+        type: Number,
         required: true
     },
     description:{
         type: String,
         required: true
+    },
+    fecha:{
+        type:Date,
+        required:false
     }
 });
 
