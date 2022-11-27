@@ -5,14 +5,18 @@ const Schema = mongoose.Schema;
 const mantentionSchema = new Schema({
     title:{
         type: String,
+        minLength:1,
+        maxLength:100,
         required: true
     },
     cost:{
-        type: String,
+        type: Number,
         required: true
     },
     description:{
         type: String,
+        minLength:1,
+        maxLength:1000,
         required: true
     }
 });
