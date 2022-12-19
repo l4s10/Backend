@@ -6,8 +6,18 @@ const mantentionSchema = new Schema({
     title:{
         type: String,
         minLength:1,
+        maxLength:[100, 'Máximo 100 caracteres'],
+        required: true
+    },
+    maintenceManager:{
+        type: String,
+        minLength:1,
         maxLength:100,
         required: true
+    },
+    date:{
+        type: String,
+        required:true
     },
     cost:{
         type: Number,
