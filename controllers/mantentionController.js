@@ -2,11 +2,11 @@ const mantention = require('../models/mantention')
 
 /*Funcionalidad Francisco*/
 const createMantention = (req, res) =>{
-    const {title, date, maintenceManager, cost, description} = req.body;
+    const {title, createdAt, maintenceManager, cost, description} = req.body;
     //Creando el objeto
     const newMantention = new mantention({
         title,
-        date,
+        createdAt,
         maintenceManager,
         cost,
         description

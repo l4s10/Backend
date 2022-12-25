@@ -5,28 +5,30 @@ const Schema = mongoose.Schema;
 const mantentionSchema = new Schema({
     title:{
         type: String,
-        minLength:1,
+        minLength: [1, 'El nombre es demaciado corto'],
         maxLength:[100, 'Máximo 100 caracteres'],
-        required: true
+        required: [true, 'El título de la mantención es necesario']
     },
     maintenceManager:{
         type: String,
         minLength:1,
-        maxLength:100,
-        required: true
+        maxLength: [100, 'Máximo 100 caracteres permitidos'],
+        required: [true, 'La mantención debe contar con el nombre de la empresa encargada']
     },
-    date:{
+    createdAt:{
+        // type: Date,
         type: String,
+        default: new Date().toLocaleDateString(),
         required:true
     },
     cost:{
         type: Number,
-        required: true
+        required: [true, 'La mantención debe tener un coste declarado']
     },
     description:{
         type: String,
         minLength:1,
-        maxLength:1000,
+        maxLength:3000,
         required: true
     }
 });
