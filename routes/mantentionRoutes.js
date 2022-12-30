@@ -7,6 +7,7 @@ const mantentionController = require('../controllers/mantentionController');
 -> http://localhost:(env.PORT)/api/Mantention/delete/(id) : Eliminar mantencion
 -> http://localhost:(env.PORT)/api/Mantentions/view : Ver mantenciones
 */
+
 api.post('/Mantention/Create', mantentionController.createMantention);
 api.put('/Mantention/Update/:id',mantentionController.updateMantention);
 api.delete('/Mantention/delete/:id', mantentionController.deleteMantention);

@@ -9,18 +9,19 @@ const createMantention = (req, res) =>{
         createdAt,
         maintenceManager,
         cost,
-        description
+        description,
     });
     //Guarda la mantencion en la BDD
     newMantention.save((err,mantention) => {
-        //Manejo de errores
-        if(err){
-            console.log(err);
-            return res.status(400).send({message: 'Error al crear la mantención'})
-        }
-        return res.status(201).send(mantention)
+    //Manejo de errores
+    if(err){
+        console.log(err);
+        return res.status(400).send({message: 'Error al crear la mantención'})
+    }
+    return res.status(201).send(mantention)
     });
 }
+
 /*Update*/
 const updateMantention = (req, res) => {
     const {id} = req.params;
