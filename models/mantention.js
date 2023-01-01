@@ -26,7 +26,7 @@ const mantentionSchema = new Schema({
     },
     cost:{
         type: Number,
-        required: [true, 'La mantención debe tener un coste declarado'],
+        // required: [true, 'La mantención debe tener un coste declarado'],
     },
     description:{
         type: String,
